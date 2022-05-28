@@ -1,0 +1,75 @@
+##  Comandos Windows/Unix
+
+1. dir/ls - Listar as pastas dentro do diretório
+2. cd - Navegar entre as pastas do diretório
+3. cd .. - Retroceder um nível de pasta dentro do diretório
+4. cls/clear - Limpar terminal
+5. mkdir - Criar pasta
+6. del - Deletar os arquivos dentro de uma pasta
+7. rmdir/rm -rf - Deletar a pasta
+8. git init - Inicializar o git
+9.  -a - Mostrar arquivos ocultos
+10. mv - Mover arquivo (ex. mv arquivo ./pasta-nova/)
+
+
+
+## Chave SSH e Token
+
+#### Configurações de chave SSH
+
+- Acessar Git Bash/ digitar os comandos: ssh-keygen -t ed25519 -C "e-mail"/enter: irá mostrar onde a chave está salva e o ID da chave/enter/será solicitada uma senha (não é necessário informar)/enter 2 x: será gerada a chave pública com a encriptação e também chave privada.
+- Acessar GitHub em: Settings/SSH and GPG keys/inserir a chave pública nomeando o computador referente a esta chave.
+- Acessar Git Bash/cd diretório SSH (onde estão guardadas as chaves), inserir os seguintes comandos: eval $ (ssh-agent -s)/irá aparecer o agent pid/inserir os comandos: ssh-add id_ed25519/irá aparecer a identificação + e-mail.
+
+#### Token de acesso pessoal
+
+- Acessar GitHub /Settings/Developer Settings/Personal Acces Token/Generate new token/informar nome do token/data dse expiração caso houver/marcar opção "Repo"/copiar token gerado e salvar em um arquivo seguro no computador.
+
+OBS: Uma vez gerado e saindo da página, não fica mais disponível o token para copiar, é necessário fazer todo o processo novamente para gerar outro token.
+
+#### Clonar repositório
+
+- SSH - Acessar GitHub/code/SSH/copiar o link/acessar Git Bash: cd /diretório onde ficará armazenado/git clone "link ssh"/vai trazer uma mensagem e uma pergunta: yes.
+- HTTP - GitHub/code/HTTPS/copiar link/acessar Git Bash: cd /diretório onde ficará armazenado/git clone "link http"/abrirá uma tela para informar token/sign.
+
+#### Configurações GIT
+
+- Acessar Git Bash/git config --global user.email "inserir email"/enter
+- Acessar Git Bash/git config --global user.name "nome"
+- Verificar as configurações do Git: git config --list
+- Reescrever configuração do Git: git config --global --unset "nome da configuração"/enter/reeconfigurar.
+
+#### Adicionando arquivo
+
+- Acessar Git Bash/git add * (modifica todos os arquivos do repositório) ou git add nome_arquivo (modifica apenas este arquivo)
+
+#### Criando Commit
+
+- Acessar Git Bash/git commit -m "mensagem do que está sendo feito"
+
+#### Criar um repositório no GitHub
+
+- Acessar perfil GitHub/Your repositories/New/definir o nome/adicionar uma descrição/se será público ou privado/Create repository.
+- Copiar o endereço em "or push an existing repository from the command line".
+- Acessar Git Bash/git remote add origin "link copiado".
+- Para confirmar se deu certo a criação do repositório do Git para GitHub: Git Bash/git remote -v/irá trazer duas linhas ao final entre parênteses (fetch e push).
+- Para verificar que não existe nenhuma pendência no repositório: Git Bash/git status.
+- Para empurrar código do Git para GitHub: git push origin master ou main.
+- Retornar código do GitHub para Git: git pull origin master ou main
+
+OBS: Tudo que está no repositório local tem que estar comitado, senão não é possível enviá-lo ao repositório remoto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
